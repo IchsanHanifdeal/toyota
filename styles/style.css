@@ -1,0 +1,171 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+}
+div {
+    display: block;
+    /* border: 1px solid; */
+}
+h1 {
+    font-family: 'Bebas Neue';
+    font-size: 80px;
+    color: #363958;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid; */
+}
+h2 {
+    font-family: 'Bebas Neue';
+    font-size: 48px;
+    color: #363958;
+}
+h4 {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 1000;
+    color: #363958;
+}
+h5 {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 1000;
+    color: #363958;
+}
+a:hover {
+    transition: 1s;
+    box-shadow: box-shadow: 20px 20px 30px #3D4FF3;
+}
+
+/* header */
+#header {
+    height: auto;
+    padding: 50px 0px 70px 0px;
+    background-color: #fff9f4;
+}
+#header span {
+    font-weight: 1000;
+}
+.custom-navbar {
+    background-color: #fff9f4;
+}
+.custom-ul {
+    text-align: center;
+    background-color: #fff9f4;
+}
+.custom-li {
+    font-weight: 700;
+    padding: 0px 25px;
+}
+.custom-logo {
+    width: 15%;
+}
+/* end header */
+
+/* header */
+.custom-highlight {
+    color: #2b2827;
+}
+.custom-btn {
+    background-color: #3D4FF3;
+    padding: 10px;
+    border: none;
+}
+/* end header/
+
+/*  */
+.custom-card {
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+.custom-footer {
+    background-color: transparent;
+    border: none;
+}
+/* Login Navbar */
+#login-dp {
+    min-width: 250px;
+    padding: 14px; 
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    left: auto; /* Menambah properti left untuk menggeser dropdown ke kiri */
+    right: 0; /* Menggeser dropdown ke kanan */
+}
+
+#login-dp .help-block {
+    font-size: 12px;
+}
+
+#login-dp .bottom {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #ddd;
+    clear: both;
+    padding: 14px;
+}
+
+#login-dp .social-buttons {
+    margin: 12px 0;
+}
+
+#login-dp .social-buttons a {
+    width: 49%;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+.btn-fb {
+    color: #fff;
+    background-color: #3b5998;
+}
+
+.btn-fb:hover {
+    color: #fff;
+    background-color: #496ebc;
+}
+
+.btn-tw {
+    color: #fff;
+    background-color: #55acee;
+}
+
+.btn-tw:hover {
+    color: #fff;
+    background-color: #59b5fa;
+}
+
+
+/*  */
+.custom-bg {
+    height: 350px;
+    background: #F1F1F1;
+    border-radius: 12px;
+}
+/*  */
+
+/* services section */
+.custom-img-width {
+    width: 80px;
+    /* border: 1px solid; */
+}
+.custom-service-card {
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+/* end services section */
+
+/* footer */
+#footer {
+    padding: 25px 0px;
+}
+footer h5 {
+    padding: 10px 0px;
+    /* border: 1px solid; */
+}
+#footer li a {
+    text-decoration: none;
+}
+/* end footer */
