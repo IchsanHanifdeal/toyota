@@ -1,7 +1,8 @@
 <?php
 require 'backend/koneksi.php';
 
-
+$sql = "SELECT * FROM mobil";
+$result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,121 +115,41 @@ require 'backend/koneksi.php';
     <main class="container">
         <!-- MPV section -->
         <section id="MPV" class="mt-5">
-            <h2>MPV</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/mpv3.png" class="card-img-top w-100 custom-bg" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">All New Alphard HEV White</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
-                            </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/mpv1.png" class="card-img-top w-100 custom-bg" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">New Alphard HEV Black</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
-                            </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/mpv2.png" class="card-img-top w-100 custom-bg" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">All New Kijang Innova Zenix HEV</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
-                            </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end casual shoes section -->
+            <h2>PRODUK</h2>
 
-        <!-- formal shoes section -->
-        <section id="SUV" class="mt-5">
-            <h2>SUV</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/suv1.png" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">All New Raize White</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $id_mobil = $row['id_mobil'];
+                    $nama = $row['nama'];
+                    $gambar = $row['gambar'];
+                    $deskripsi = $row['deskripsi'];
+                    $harga = $row['harga'];
+                ?>
+                    <div class="col mb-4">
+                        <div class="card h-100 shadow custom-card">
+                            <img src="dashboard/uploads/cars/<?php echo $gambar; ?>" class="card-img-top w-100 custom-bg" alt="<?php echo $gambar; ?>">
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $nama; ?></h4>
+                                <p class="card-text"><?php echo $deskripsi; ?></p>
                             </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/suv2.png" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">All New Raize Black</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
-                            </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
+                            <div class="card-footer custom-footer">
+                                <div class="float-start">
+                                    <h4 class="custom-highlight"><?php echo 'Rp ' . number_format($harga, 0, ',', '.'); ?></h4>
+                                </div>
+                                <div class="float-end">
+                                    <a href="checkout.php?id_mobil=<?php echo $id_mobil; ?>" type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 shadow custom-card">
-                        <img src="Photos/suv3.png" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title">All New Raize BLue</h4>
-                            <p class="card-text">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                        <div class="card-footer custom-footer">
-                            <div class="float-start">
-                                <h4 class="custom-highlight">$234</h4>
-                            </div>
-                            <div class="float-end">
-                                <button type="button" class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-shopping-cart"></i> BUY NOW</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </section>
-        <!-- end formal shoes section -->
+
+        <!-- end casual shoes section -->
 
         <!-- services section -->
         <section id="services" class="mt-5">
@@ -302,7 +223,6 @@ require 'backend/koneksi.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- end script -->
     <?php
-    session_start();
     include 'backend/koneksi.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

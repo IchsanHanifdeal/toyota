@@ -84,7 +84,7 @@
                                             <?php echo $deskripsi; ?>
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-warning" href="edit.php?id_paket=<?php echo $id_mobil ?>">
+                                            <a class="btn btn-warning" href="edit.php?id_mobil=<?php echo $id_mobil ?>">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <a class="btn btn-danger" href="#" onclick="confirmDelete(<?php echo $id_mobil; ?>)">
